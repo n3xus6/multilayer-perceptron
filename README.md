@@ -65,7 +65,7 @@ Update bias:
 
 ![learning_rate](./readme_files/9.png)
 
-Note that the logistic activation function is used here.
+Note that the logistic activation function is used here as an example. If tanh was selected as the sigmoid function, then the derivative of tanh must be used instead.
 
 ## Hyperparameters
 
