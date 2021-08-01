@@ -65,6 +65,8 @@ Update bias:
 
 ![learning_rate](./readme_files/9.png)
 
+Note that the logistic activation function is used here.
+
 ## Hyperparameters
 
 So now we know how a multilayer perceptron works. But there are also some parameters we have to define from outside:
