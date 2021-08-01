@@ -51,7 +51,7 @@ The gradient is calculated by determining the partial derivations of `w` and `b`
 
 ![gradient_descent](./readme_files/7.png)
 
-Not so obvious is what is the error of an inner neuron because only for the ouput neurons target values exist. So thats why there are two cases for calculating delta.
+Not so obvious is what the error of an inner neuron could be because only for the output neurons target values exist. So that's why there are two cases for calculating delta in the above formula.
 
 ## Parameter adjustments
 
