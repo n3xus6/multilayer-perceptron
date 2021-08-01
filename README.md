@@ -5,29 +5,29 @@ These are my condensed notes on the basic theory of neural networks. It served f
 ## Overview
 A MLP is a mathematical function
 
-![ffnn_formula](.\readme_files\1.png)
+![ffnn_formula](./readme_files/1.png)
 
 FFNN stands for Feed-forward neural network. `w` are the weights of the connections and `b` are the biases.
 
-![ffnn_drawing](.\readme_files\12.png)
+![ffnn_drawing](./readme_files/12.png)
 
 The neural net has an input layer representing the values of the feature vector and an output layer for the result value(s) and zero or more hidden layers. All neurons (nodes) are connected.
 
 Weights initialization:
 
-![weights_init](.\readme_files\11.png)
+![weights_init](./readme_files/11.png)
 
 `n` is the number of the incoming connections to a neuron.
 
 Output value calculation:
 
-![output_value](.\readme_files\2.png)
+![output_value](./readme_files/2.png)
 
 alpha is the activation function which is often the logistic function or the hyperbolic tangent.
 
-![logistic_func](.\readme_files\3.png)
+![logistic_func](./readme_files/3.png)
 
-![tanh_func](.\readme_files\4.png)
+![tanh_func](./readme_files/4.png)
 
 ## Training
 
@@ -41,15 +41,15 @@ The goal is to minimize the measured error by optimizing the `w` and `b` paramet
 
 As the loss function the mean squared error (MSE) function divided by two is selected.
 
-![msq](.\readme_files\5.png)
+![msq](./readme_files/5.png)
 
 Applied to a neuron `j` it is
 
-![msq_neuron_j](.\readme_files\6.png)
+![msq_neuron_j](./readme_files/6.png)
 
 The gradient is calculated by determining the partial derivations of `w` and `b` of the error function.
 
-![gradient_descent](.\readme_files\7.png)
+![gradient_descent](./readme_files/7.png)
 
 Not so obvious is what is the error of an inner neuron because only for the ouput neurons target values exist. So thats why there are two cases for calculating delta.
 
@@ -57,13 +57,13 @@ Not so obvious is what is the error of an inner neuron because only for the oupu
 
 Update weight:
 
-![update_w](.\readme_files\8.png)
+![update_w](./readme_files/8.png)
 
 Update bias:
 
-![update_b](.\readme_files\10.png)
+![update_b](./readme_files/10.png)
 
-![learning_rate](.\readme_files\9.png)
+![learning_rate](./readme_files/9.png)
 
 ## Hyperparameters
 
