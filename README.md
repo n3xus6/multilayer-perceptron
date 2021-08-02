@@ -1,59 +1,65 @@
 # Implementation Multilayer Perceptron (MLP)
 
-These are my condensed notes on the basic theory of neural networks. It served for me as a foundation for implementing a neural network properly. Please check the reference section for books and articles I was using as learning material.
+These are my condensed notes on the basic theory of neural networks. It served for me as a foundation for implementing a neural network. Check the reference section for the books and articles I was using as learning material.
 
 ## Overview
 A MLP is a mathematical function
 
 ![ffnn_formula](./readme_files/1.png)
 
-FFNN stands for Feed-forward neural network. `w` are the weights of the connections and `b` are the biases.
+FFNN stands for Feed-forward neural network. `w` are the weights (weight matrices) of the connections and `b` are the biases added to the input of the activation function.
 
 ![ffnn_drawing](./readme_files/12.png)
 
 The neural net has an input layer representing the values of the feature vector and an output layer for the result value(s) and zero or more hidden layers. All neurons (nodes) are connected.
 
-Weights initialization:
-
-![weights_init](./readme_files/11.png)
-
-`n` is the number of the incoming connections to a neuron.
-
-Output value calculation:
+Output function for a neuron `j`:
 
 ![output_value](./readme_files/2.png)
 
-alpha is the activation function which is often the logistic function or the hyperbolic tangent.
+alpha is the activation function which is often the logistic function
 
 ![logistic_func](./readme_files/3.png)
+
+or the hyperbolic tangent
 
 ![tanh_func](./readme_files/4.png)
 
 ## Training
 
-We feed the neural network with the feature vector of the samples from the training set and compare the result at the output layer with the corresponding test vector. The error is backpropagated in order to update the weights (and biases).
+We feed the neural network with the feature vector of all samples in the training set and compare the result at the output layer with the corresponding test vector for each sample. The error values are backpropagated from one layer to the previous layer and used to update the weights between any two layers of the neural net. When all samples are processed, this step is repeated and repeated again, by randomly picking the samples from the same training set, until some finish criteria is met e.g., the classification accuracy rating was at it's peak. Data preprocessing and adding artificial training data could also improve the model.
+
+Weight initialization:
+
+![weights_init](./readme_files/11.png)
+
+`n` is the number of the incoming connections (signals) to a neuron.
+
+This is just one example. Other methods exist.
 
 ## Gradient descent
 
-To know how to update the `w` and `b` parameters the Gradient descent method is used.
+The goal is to minimize the error of the neural net by optimizing the `w` and `b` parameters in the error function. To know how to update the parameters, the **Gradient descent** method is applied.
 
-The goal is to minimize the measured error by optimizing the `w` and `b` parameters. To know how to update the parameters the **Gradient descent** method is used.
-
-As the loss function the mean squared error (MSE) function divided by two is selected.
+As the loss function the mean squared error (MSE) divided by two is used here.
 
 ![msq](./readme_files/5.png)
 
-Applied to a neuron `j` it is
+For a neuron `j` it is
 
 ![msq_neuron_j](./readme_files/6.png)
 
-The gradient is calculated by determining the partial derivations of `w` and `b` of the error function.
+The gradient is calculated by determining the partial derivations for `w` and `b` of the selected error function.
 
 ![gradient_descent](./readme_files/7.png)
 
-Not so obvious is what the error of an inner neuron could be because only for the output neurons target values exist. So that's why there are two cases for calculating delta in the above formula.
+Not so obvious is what the error of an inner neuron could be, because only for the output neurons target values exist. So that's why there are two cases for calculating delta in the above formula.
+
+![gradient_descent](./readme_files/13.png)
 
 ## Parameter adjustments
+
+Assuming the logistic function was selected as the sigmoid function:
 
 Update weight:
 
@@ -65,20 +71,20 @@ Update bias:
 
 ![learning_rate](./readme_files/9.png)
 
-Note that the logistic activation function is used here as an example. If tanh was selected as the sigmoid function, then the derivative of tanh must be used instead.
-
 ## Hyperparameters
 
-So now we know how a multilayer perceptron works. But there are also some parameters we have to define from outside:
+So we know how a multilayer perceptron works, now. But there are also some parameters that we have to specify from outside, that are not part of the learning process:
 - number of layers
-- number of nodes of the hidden layers
+- number of nodes on the hidden layers
 - learning rate
 - activation function
+- weight (bias) initialization
+- batch size
 - epoch count
 
 ... and more.
 
-There are some methods that may help to select the hyperparameters but it also involves experimenting with a smaller training and validation set.
+There are some methods that help to select good hyperparameters but it also involves experimenting with a smaller training and validation set.
 
 ## Implementation
 
