@@ -88,7 +88,52 @@ There are some methods that help to select good hyperparameters but it also invo
 
 ## Implementation
 
-TODO
+### Files
+
+* _neuralnet.c_, _neuralnet.h_ - Implementation of a multilayer-perceptron (MLP)
+* _example.c_ - Example application
+
+### Compilation
+
+gcc 7.5.0
+~~~bash
+gcc -O2 -Wall -Wextra -pedantic -o nn neuralnet.c example.c -lm
+~~~
+
+clang 6.0.0
+~~~bash
+clang -O2 -Wall -Wextra -pedantic -o nn neuralnet.c example.c -lm
+~~~
+
+Microsoft (R) C/C++ Compiler 19.23.28105.4
+~~~bash
+cl /O2 /TC neuralnet.c example.c /link /out:nn.exe
+~~~
+
+### Example ouput
+
+#### [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+
+~~~bash
+[Epoch  0] Classification accuracy rate: 0.835000
+[Epoch  1] Classification accuracy rate: 0.843300
+[Epoch  2] Classification accuracy rate: 0.797700
+[Epoch  3] Classification accuracy rate: 0.834200
+[Epoch  4] Classification accuracy rate: 0.830300
+[Epoch  5] Classification accuracy rate: 0.814200
+[Epoch  6] Classification accuracy rate: 0.822900
+[Epoch  7] Classification accuracy rate: 0.826800
+[Epoch  8] Classification accuracy rate: 0.804400
+...
+~~~
+
+#### [Original MNIST](http://yann.lecun.com/exdb/mnist/)
+
+### Planned improvements
+* input data preprocessing
+* adaptive learning rate
+* convolution
+* pooling
 
 ## Literature Reference
 
