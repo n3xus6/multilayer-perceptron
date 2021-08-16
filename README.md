@@ -112,22 +112,39 @@ cl /O2 /TC neuralnet.c example.c /link /out:nn.exe
 
 ### Example ouput
 
-#### [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+#### [Original MNIST](http://yann.lecun.com/exdb/mnist/)
+
+One hidden layer, logistic function, learning rate 0.1.
 
 ~~~bash
-[Epoch  0] Classification accuracy rate: 0.835000
-[Epoch  1] Classification accuracy rate: 0.843300
-[Epoch  2] Classification accuracy rate: 0.797700
-[Epoch  3] Classification accuracy rate: 0.834200
-[Epoch  4] Classification accuracy rate: 0.830300
-[Epoch  5] Classification accuracy rate: 0.814200
-[Epoch  6] Classification accuracy rate: 0.822900
-[Epoch  7] Classification accuracy rate: 0.826800
-[Epoch  8] Classification accuracy rate: 0.804400
+[Epoch  0] Classification accuracy rate: 0.961600
+[Epoch  1] Classification accuracy rate: 0.970900
+[Epoch  2] Classification accuracy rate: 0.974000
+[Epoch  3] Classification accuracy rate: 0.976900
+[Epoch  4] Classification accuracy rate: 0.976400
+[Epoch  5] Classification accuracy rate: 0.978300
+[Epoch  6] Classification accuracy rate: 0.978500
+[Epoch  7] Classification accuracy rate: 0.980100
+[Epoch  8] Classification accuracy rate: 0.979600
 ...
 ~~~
 
-#### [Original MNIST](http://yann.lecun.com/exdb/mnist/)
+#### [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+
+One hidden layer, hyperbolic tangent, learning rate 0.01.
+
+~~~bash
+[Epoch  0] Classification accuracy rate: 0.810400
+[Epoch  1] Classification accuracy rate: 0.826800
+[Epoch  2] Classification accuracy rate: 0.837200
+[Epoch  3] Classification accuracy rate: 0.836600
+[Epoch  4] Classification accuracy rate: 0.832800
+[Epoch  5] Classification accuracy rate: 0.838600
+[Epoch  6] Classification accuracy rate: 0.831800
+[Epoch  7] Classification accuracy rate: 0.840700
+[Epoch  8] Classification accuracy rate: 0.839700
+...
+~~~
 
 ### Planned improvements
 * input data preprocessing
